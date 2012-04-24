@@ -401,7 +401,7 @@ class ControllerPaymentBitcoinPayFlow extends Controller {
 		}
 		
 	}
-	
+	// to retrieve from the .tpl file
 	public function confirm() {
 		$this->language->load('payment/bitcoinpayflow');
 
@@ -417,8 +417,6 @@ class ControllerPaymentBitcoinPayFlow extends Controller {
 				'custom_field' => 'encrypted order id',
 				'auth_token' => $this->config->get('bitcoinpayflow_auth_token')
 			));
-		// REMOVE ME
-		echo $this->currency->format($order_info['total'], $order_info['currency_code'], $order_info['currency_value'], false);
 		print_r($orders);
 		$comment = $this->language->get('text_address') . "\n";
 		$comment .= $orders['order']['bitcoin_address'] . "\n\n";
@@ -426,5 +424,6 @@ class ControllerPaymentBitcoinPayFlow extends Controller {
 		
 		$this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('bitcoinpayflow_pending_status_id'), $comment);
 	}
+//end
 }
 ?>
