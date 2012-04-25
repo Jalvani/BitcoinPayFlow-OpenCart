@@ -3,7 +3,7 @@
 class bitcoinPayFlow {
     //API Configuration
     const API_URL       = 'https://bitcoinpayflow.com/';
-    const RESULT_FORMAT = 'array'; //default is 'json'
+    const RESULT_FORMAT = 'JSON'; //default is 'json'
     const EXT           = '.php';
     
     private $apiMethods    = array('orders', 'tokens');
@@ -120,6 +120,7 @@ class bitcoinPayFlow {
         
         //close CURL connection
         curl_close($ch);
+        
         
                         
         return $returnData;
